@@ -19,17 +19,17 @@ public class FlipBitTest {
     }
 
     public int correctFlipBit(int value, int bitIndex) {
-        StringBuilder stringValue = new StringBuilder(Integer.toBinaryString(value));
+        StringBuilder binaryString = new StringBuilder(Integer.toBinaryString(value));
         StringBuilder result = new StringBuilder();
-        int lengthString = stringValue.length();
-        if (lengthString < bitIndex) {
-            for (int i = 0; i < bitIndex - lengthString; i++) {
+        int stringLength = binaryString.length();
+        if (stringLength < bitIndex) {
+            for (int i = 0; i < bitIndex - stringLength; i++) {
                 result.append('0');
             }
         }
-        result.append(stringValue);
-        char r = (result.charAt(result.length() - bitIndex) == '0') ? '1' : '0';
-        result.setCharAt(result.length() - bitIndex, r);
+        result.append(binaryString);
+        char flippedBit = (result.charAt(result.length() - bitIndex) == '0') ? '1' : '0';
+        result.setCharAt(result.length() - bitIndex, flippedBit);
         return Integer.parseInt(result.toString(), 2);
     }
 }
