@@ -7,6 +7,7 @@
 Sample Input:
 
 0 1
+
 Sample Output:
 
 1
